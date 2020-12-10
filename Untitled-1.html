@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>城市转换</title>
+   <style>
+       *{
+        font-size: 20px;
+       }
+    select{
+       
+        width: 240px;
+        height: 220px;
+        background-color: rgb(21, 92, 15);
+    }
+    .btnbox{
+        vertical-align: top;
+        height: 220px;
+        width: 30px;
+        display: inline-block;
+    }
+
+</style>
+</head>
+
+
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+         $("#allToR").on('click',function(){
+            $("#left>option").appendTo("#right");
+        })
+        $("#allToL").on('click',function(){
+            $("#right>option").appendTo("#left");
+        })
+       $("#toR").on('click',function(){     //.click(function(){
+            $("#left>option:selected").appendTo("#right");
+        })
+        $("#toL").on('click',function(){
+            $("#right>option:selected").appendTo("#left");
+        })
+        
+    });
+</script>
+   
+    </head>
+    <body>
+        
+          
+                <select id="left"  multiple>
+                        <option value="1">北京</option>
+                        <option value="2">上海</option>
+                        <option value="3">深圳</option>
+                        <option value="4">广州</option>
+                        <option value="5">西红柿</option>
+                    </select>
+            <div class="btnbox">
+              <button id="allToR">&gt;&gt;</button>
+              <button id="allToL">&lt;&lt;</button>
+              <button id="toR">&gt;</button>
+              <button id="toL">&lt;</button>
+            </div>  
+              <select id="right"  multiple>
+              </select>
+          
+        </body>
+
+    </html>
+
